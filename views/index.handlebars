@@ -1,0 +1,30 @@
+<!--para dar destaque a um conteúdo-->
+<div class="jumbotron">
+  <h1 class="display-4">Bem vindo ao blog do LULU!</h1>
+  <p class="lead">Esse é um blog simples desenvolvido com NodeJS + Express + MongoDB</p>
+  <hr class="my-4">
+  <p>Aqui você vai poder conhecer um pouco mais sobre o mundo da computação</p>
+  <a class="btn btn-primary btn-lg" href="/usuario/registro" role="button">Criar Conta</a>
+</div>
+
+<h2>Postagens Recentes</h2>
+
+{{#each postagens}}
+    <div class="card text-center mt-4">
+        <div class="card-header">
+            <h5>Categoria: {{categoria}}</h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{titulo}}</h5>
+            <p class="card-text">{{descricao}}</p>
+            <a href="/postagem/{{slug}}">
+                <button class="btn btn-success">Ir para a Postagem</button>
+            </a>
+        </div>
+        <div class="card-footer text-right">
+            <small>Publicado em: {{data}}</small>
+        </div>
+    </div>
+{{else}}
+    <p>nenhuma postagem</p>
+{{/each}}

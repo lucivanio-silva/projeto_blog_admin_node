@@ -1,0 +1,1 @@
+helpers são pequenas funções que servem para ajudar em alguma coisa, pode-se criar um helper para ajudar em qualquer coisa, é como se fosse um pequeno middleware

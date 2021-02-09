@@ -1,0 +1,23 @@
+<!--objeto erros passado no arquivo admin.js-->
+{{#each erros}}
+    <!--para cada erro exibir o atributo texto-->
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<h3>Editar Categoria</h3>
+<div class="card"> <!--cria uma borda ao redor da div-->
+    <div class="card-body"><!--configura o espaçamento interno do card-->
+        <form action="/admin/categorias/edit" method="POST">
+            <!--campo invisível só para guardar o id da categoria em edição-->
+            <input type="hidden" name="id" value="{{categoria._id}}"
+            <label for="nome">Nome:</label>                                          <!--configura o input-->
+            <input type="text" id="nome" name="nome" placeholder="Nome da categoria" class="form-control " value="{{categoria.nome}}"/><!--passa o valor do nome da categoria passada na rota edit-->
+            <label for="slug">Slug:</label>
+            <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control" value="{{categoria.slug}}"/>
+            <br/>
+            <button type="submit" class="btn btn-success">Salvar Edição</button>
+        </form>
+    </div>
+</div>

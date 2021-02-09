@@ -1,0 +1,7 @@
+serve para dividir o layout de nossas p�ginas em vários pedaços
+
+{_navbar.handlebars: é a parte no meu templete que vai ser meu cabeçalho
+
+}
+
+.para saber quais itens são possíveis editar no bootstrap vá em documentation e depois em components

@@ -1,0 +1,36 @@
+<!--objeto erros passado no arquivo admin.js-->
+{{#each erros}}
+    <!--para cada erro exibir o atributo texto-->
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<h3>Editar Postagem</h3>
+<div class="card"> <!--cria uma borda ao redor da div-->
+    <div class="card-body"><!--configura o espaçamento interno do card-->
+        <form action="/admin/postagens/edit" method="POST">
+            <!--campo invisível só para guardar o id da categoria em edição-->
+            <input type="hidden" name="id" value="{{postagem._id}}"/>
+            <label for="titulo">Título:</label>
+            <input type="text" name='titulo' class="form-control" value="{{postagem.titulo}}">
+            <label for="slug">Slug:</label>
+            <input type="text" name='slug' class="form-control" value="{{postagem.slug}}">
+            <label for="descricao">Descrição:</label>
+            <input type="text" name='descricao' class="form-control" value="{{postagem.descricao}}">
+            <label for="conteudo">Conteudo:</label>
+            <textarea name="conteudo" class="form-control" >{{postagem.conteudo}}</textarea>
+            <label for="categoria">Categoria</label>
+            <select name="categoria" class="custom-select">
+                {{#each categorias}}
+                    <option value="{{_id}}">{{nome}}</option>
+                {{else}}
+                    <!--o valor é 0 caso nao haja categorias registradas-->
+                    <option value="0">Nenhuma categoria registrada</option>
+                {{/each}}
+            </select>                                         
+            <br/>
+            <button type="submit" class="btn btn-success mt-4" >Salvar Edição</button>
+        </form>
+    </div>
+</div>
